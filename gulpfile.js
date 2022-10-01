@@ -26,8 +26,8 @@ function scss() {
   return src('src/css/*.scss')
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(csso())
     .pipe(concat('index.css'))
+    .pipe(csso())
     .pipe(dest('dist'))
 }
 
