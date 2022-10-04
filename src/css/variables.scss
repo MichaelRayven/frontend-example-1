@@ -1,4 +1,22 @@
-$body-bg: #f6f6f6;
-$c-text-primary: #000;
-$c-text-secondary: #787878;
-$c-text-contrast: #fff;
+
+
+// Background colours
+$bg-body: #f6f6f6;
+$bg-footer: #141414;
+$bg-header: #fff;
+
+// Text colours
+$text-primary: #000;
+$text-primary-hover: lighten(#000, 35%);
+$text-secondary: #787878;
+$text-contrast: #fff;
+$text-header-hover: #10c9c3;
+$text-footer: #bcbcbc;
+$text-footer-hover: lighten($text-footer, 5%);
+
+// Layout breakpoints
+$br-xs: 375px;
+$br-sm: 640px;
+$br-md: 768px;
+$br-lg: 1024px;
+$br-xl: 1280px;

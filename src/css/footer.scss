@@ -1,19 +1,19 @@
-$footer-bg: #141414;
-$footer-text: #bcbcbc;
+@import './variables.scss';
 
 .footer {
     padding: 8rem 4rem;
 
-    background-color: $footer-bg;
-    color: $footer-text;
+    background-color: $bg-footer;
+    color: $text-footer;
 
     &__inner {
+        padding: 0 4rem;
         display: flex;
         justify-content: space-between;
     }
 
     &__heading {
-        color: #fff;
+        color: $text-contrast;
         margin-bottom: 2rem;
 
         font-size: 1.8rem;

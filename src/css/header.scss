@@ -1,8 +1,8 @@
-$active_link: #10c9c3;
+@import './variables.scss';
 
 .header {
-    padding: 3rem;
-    background-color: #fff;
+    padding: 3rem 4rem;
+    background-color: $bg-header;
 
     &__inner {
         display: flex;
@@ -12,26 +12,78 @@ $active_link: #10c9c3;
     &__logo {
         width: auto;
         height: 3rem;
+
+        &-wrapper {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
     }
 
-    &__navbar {
-        margin-left: auto
+    &__menu-button {
+        visibility: hidden;
     }
 
     &__list {
         display: flex;
-        column-gap: 1.5rem;
+        column-gap: 3rem;
+        row-gap: 1.5rem;
         list-style: none;
+        overflow: hidden;
 
         text-transform: uppercase;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
+
+        transition: opacity .5s ease-out, max-height .3s linear;
     }
 
     &__list-item {
-        color: #000;
-        &_active {
-            color: $active_link;
+        transition: color 0.1s ease-out;
+        color: $text-primary;
+
+        &:hover {
+            color: $text-header-hover;
         }
+
+        &_active {
+            color: $text-header-hover;
+        }
+    }
+}
+
+@media (max-width: $br-sm) {
+    .header {
+        &__inner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__menu-button {
+            visibility: visible;
+        }
+
+        &__list {
+            opacity: 0;
+            max-height: 0;
+            flex-direction: column;
+
+            &_active {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+
+        &__list-item {
+            &:first-child {
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $br-xs) {
+    .header {
+        padding: 2rem;
     }
 }
