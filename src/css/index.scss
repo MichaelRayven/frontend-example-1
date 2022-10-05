@@ -43,6 +43,7 @@ body {
     &__hero {
         text-align: center;
         margin: 10rem 0;
+        padding: 0 4rem;
 
         &-text {
             color: $text-secondary;
@@ -62,7 +63,7 @@ body {
 
     &__gallery {
         display: grid;
-        grid-template-columns: repeat(4, 0.25fr);
+        grid-template-columns: repeat(4, auto);
         justify-items: stretch;
     }
 
@@ -111,10 +112,35 @@ body {
     :root {
         font-size: 8px;
     }
+    .main {
+        &__gallery {
+            grid-template-columns: repeat(3, auto);
+        }
+    }
+}
+
+@media screen and (max-width: $br-sm) {
+    .main {
+        &__gallery {
+            grid-template-columns: repeat(2, auto);
+        }
+    }
 }
 
 @media screen and (max-width: $br-xs) {
+    .main {
+        &__hero {
+            padding: 0 2rem;
+        }
+
+        &__gallery {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: $br-2xs) {
     body {
-        line-break: anywhere;
+        line-break: loose;
     }
 }
