@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .header {
-    padding: 3rem 4rem;
+    padding: 3rem 8rem;
     background-color: $bg-header;
 
     &__inner {
@@ -49,6 +49,12 @@
         &_active {
             color: $text-header-hover;
         }
+    }
+}
+
+@media screen and (max-width: $br-md) {
+    .header {
+        padding: 3rem 4rem;
     }
 }
 

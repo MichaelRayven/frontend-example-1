@@ -1,14 +1,15 @@
 @import './variables.scss';
 
 .footer {
-    padding: 8rem 4rem;
+    padding: 8rem;
 
     background-color: $bg-footer;
     color: $text-footer;
 
     &__inner {
-        padding: 0 4rem;
         display: flex;
+        flex-wrap: wrap;
+        gap: 4rem;
         justify-content: space-between;
     }
 
@@ -21,6 +22,7 @@
 
     &__nav {
         display: flex;
+        flex-wrap: wrap;
         column-gap: 4rem;
     }
 
@@ -32,5 +34,20 @@
         font-family: 'Nunito Sans', sans-serif;
         font-size: 1.5rem;
         line-height: 2.2rem;
+    }
+}
+
+@media screen and (max-width: $br-md) {
+    .footer {
+        padding: 8rem 4rem;
+        &__inner {
+            gap: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: $br-xs) {
+    .footer {
+        padding: 4rem 2rem;
     }
 }
