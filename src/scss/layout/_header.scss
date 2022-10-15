@@ -1,0 +1,10 @@
+@use "../util" as u;
+
+.header {
+  background-color: u.hslv(background-light-primary);
+  padding: u.rem(40);
+
+  @include u.breakpoint-down(small) {
+    padding: u.rem(20);
+  }
+}

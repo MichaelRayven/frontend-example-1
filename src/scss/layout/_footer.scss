@@ -1,0 +1,54 @@
+@use "../util" as u;
+@use "sass:color";
+
+.footer {
+  background-color: u.hslv(background-dark);
+  color: u.hslv(text-light-secondary);
+
+  font-family: u.$font-secondary;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: u.rem(40) u.rem(80);
+    padding: u.rem(100) u.rem(40);
+
+    @include u.breakpoint-down(large) {
+      justify-content: flex-start;
+      padding-block: u.rem(80);
+    }
+
+    @include u.breakpoint-down(small) {
+      padding: u.rem(40) u.rem(20);
+    }
+  }
+
+  &__heading {
+    font-family: u.$font-primary;
+    color: u.hslv(text-light-primary);
+  }
+
+  &__nav {
+    display: flex;
+    column-gap: u.rem(60);
+  }
+
+  &__link {
+    transition: color .2s linear;
+    font-size: clamp(u.rem(14), u.rem(8) + 1vw, u.rem(16));
+    margin-top: u.rem(4);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      color: u.hslav(text-light-secondary, 0.8);
+    }
+  }
+
+  @include u.breakpoint-down(small) {
+    grid-template-columns: auto;
+  }
+}

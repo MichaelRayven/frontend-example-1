@@ -1,0 +1,68 @@
+@use "../util" as u;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+
+  @include u.breakpoint-down(large) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @include u.breakpoint-down(medium) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include u.breakpoint-down(small) {
+    grid-template-columns: auto;
+  }
+
+  &__item {
+    $item: &;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    & * {
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    &--accent {
+      @extend #{$item};
+      &:hover {
+        background-color: u.hslav(background-accent, 0.7);
+      }
+    }
+
+    &--dark {
+      @extend #{$item};
+      &:hover {
+        background-color: u.hslav(background-dark, 0.7);
+      }
+    }
+
+    &::after {
+      content: "visibility";
+      font-family: "Material Symbols Outlined";
+      -webkit-font-feature-settings: "liga";
+      -webkit-font-smoothing: antialiased;
+
+      position: absolute;
+      font-size: u.rem(48);
+      color: u.hslv(text-light-primary);
+
+      transition: opacity 0.2s ease-in-out;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}

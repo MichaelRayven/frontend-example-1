@@ -1,0 +1,20 @@
+@use "../util" as u;
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__left {
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    &__right {
+        padding: u.rem(90);
+        background-color: u.hslv(background-light-secondary);
+    }
+}

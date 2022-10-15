@@ -1,0 +1,32 @@
+@use "../util" as u;
+
+.statements {
+    padding-block: u.rem(80);
+    background-color: u.hslv(background-accent);
+    color: u.hslv(text-light-primary);
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        column-gap: u.rem(16);
+    }
+
+    &__icon {
+        font-size: u.rem(48);
+        font-variation-settings: 'wght' 200, 'GRAD' 100
+    }
+
+    &__header {
+        margin-bottom: u.rem(8);
+    }
+
+    &__paragraph {
+        text-transform: uppercase;
+        font-size: clamp(u.rem(10), u.rem(8) + 0.75vw, u.rem(12));
+    }
+}

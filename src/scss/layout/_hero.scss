@@ -1,0 +1,28 @@
+@use "../util" as u;
+
+.hero {
+  $hero: &;
+
+  text-align: center;
+  background-color: u.hslv(background-light-secondary);
+  padding-block: u.rem(100);
+
+  &__text {
+    font-size: clamp(u.rem(14), u.rem(8) + 1vw, u.rem(20));
+    color: u.hslv(text-dark-secondary);
+  }
+
+  &--about {
+    @extend #{$hero};
+    background-blend-mode: multiply;
+    background: url("assets/bg-about.jpg") center center rgba(0,0,0,.6);
+
+    & .hero__heading {
+      color: u.hslv(text-light-primary);
+    }
+
+    & .hero__text {
+      color: u.hslv(text-light-secondary);
+    }
+  }
+}
