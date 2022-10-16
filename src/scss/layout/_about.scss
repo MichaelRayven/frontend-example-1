@@ -1,5 +1,25 @@
+@use "../util" as u;
+
 .about {
-    &__profile {
-        
+    &__text {
+        font-family: u.$font-secondary;
+        font-size: clamp(u.rem(14), u.rem(8) + 1vw, u.rem(20));
+        color: u.hslv(text-dark-secondary);
+
+        @include u.breakpoint-up(large) {
+            max-width: u.rem(600);
+        }
+    }
+
+    &__heading {
+        margin-bottom: 0;
+    }
+
+    &__signature {
+        width: 30%;
+
+        @include u.breakpoint-down(small) {
+            width: 70%;
+        }
     }
 }
