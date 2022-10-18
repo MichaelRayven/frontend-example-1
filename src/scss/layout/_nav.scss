@@ -51,6 +51,7 @@
     $item: &;
 
     text-transform: uppercase;
+    font-size: clamp(u.rem(16), u.rem(10) + 0.3vw, u.rem(20));
     font-weight: 700;
     color: u.hslv(text-dark-primary);
     transition: color 0.2s ease-in-out;

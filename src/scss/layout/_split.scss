@@ -7,18 +7,18 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    &__stretch,
-    &__text { 
+    &__stretch {
         aspect-ratio: 1/1;
     }
 
     &__image {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__text {
-        padding: clamp(u.rem(20), u.rem(18) + 5vw, u.rem(200));
+        padding: clamp(u.rem(20), u.rem(18) + 5vw, u.rem(100));
         background-color: u.hslv(background-light-secondary);
 
         display: flex;

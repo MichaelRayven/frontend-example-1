@@ -1,0 +1,27 @@
+@use "../util" as u;
+
+.button {
+    font-family: u.$font-primary;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: u.rem(24) u.rem(56);
+    background-color: u.hslv(background-accent);
+    color: u.hslv(text-light-primary);
+    transition: background-color .2s linear;
+
+    &:hover {
+      background-color: u.hslav(background-accent, 0.9);
+    }
+
+    @include u.breakpoint-down(large) {
+      padding: u.rem(20) u.rem(50);
+    }
+
+    @include u.breakpoint-down(medium) {
+      padding: u.rem(18) u.rem(46);
+    }
+
+    @include u.breakpoint-down(small) {
+      padding: u.rem(14) u.rem(36);
+    }
+  }

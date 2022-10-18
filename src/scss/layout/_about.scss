@@ -19,7 +19,7 @@
         width: 30%;
 
         @include u.breakpoint-down(small) {
-            width: 70%;
+            width: 60%;
         }
     }
 }
